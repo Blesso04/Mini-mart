@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+    <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap (2).css">
+</head>
+<body>
+    <div class="container-fluid mx-auto col-lg-7 col-10 shadow-sm mt-lg-5 mt-2 p-3 bg-dark" style="border-radius: 15px;">
+        <h1 class="text-center text-danger text-decoration-underline my-3">MINI MART</h1>
+        <input type="text" class="shadow-none form-control my-2 form-control-sm" id="input" placeholder="ITEM">
+        <input type="number" class="shadow-none form-control my-2 form-control-sm" id="inputi" placeholder="PRICE(&#x20A6)">
+        <input type="text" class="shadow-none form-control my-2 form-control-sm" id="inputii" placeholder="QUANTITY">
+        <button class="w-100 btn btn-outline-danger my-2 btn-sm" onclick="addItems()">Submit</button>
+    </div>
+
+    <div class="container-fluid mx-auto col-lg-7 col-10 shadow-sm p-3 my-4 bg-dark text-light " style="border-radius: 15px;" >
+         <table class="table table-ordered" id="show"></table>
+         <div class="container-fluid mx-auto col-lg-7 col-10 shadow-sm p-3 my-4 bg-light text-dark w-100 " style="display: none;" id="display">Total price:$0</div>
+    </div>
+   
+
+    <!-- <div class="container-fluid mx-auto col-lg-7 col-10 shadow-sm-dander mt-lg-5 mt-2 p-3 bg-dark" style="display: none;" id="inputFields">
+    <p>Please Note that your index starts from 0 i.e Number one is index 0</p>
+        <input type="text" class="shadow-none form-control my-2 form-control-sm" id="inputa" placeholder="enter index">
+        <input type="text" class="shadow-none form-control my-2 form-control-sm" id="inputb" placeholder="enter new value">
+        <button class="w-100 btn btn-outline-danger my-2 btn-sm" onclick="updateItems()">Update</button>
+    </div> -->
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Which item do you want to delete?</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="alert alert-danger p-1 mb-2 text-center " style="display:none;" id="modalError">Spaces cannot be empty</div>
+            <div class="alert alert-success p-1 mb-2 text-center" style="display:none;" id="modalSuccess">Deleted successfully</div>
+         <input type="number" class="shadow-none form-control my-2 form-control-sm" id="inputa" placeholder="Enter the index of the item you want to delete">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="anyDelete()" >Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+   <!-- Modal -->
+   <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Which item do you want to edit?</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="alert alert-danger p-1 mb-2 text-center" style="display:none;" id="modalError1">Spaces cannot be empty</div>
+            <div class="alert alert-danger p-1 mb-2 text-center" style="display:none;" id="modalError2">Not possible</div>
+            <div class="alert alert-success p-1 mb-2 text-center" style="display:none;" id="modalSuccess1">Done</div>
+         <input type="number" class="shadow-none form-control my-2 form-control-sm" id="inputb" placeholder="Enter the index of the item you want to edit">
+         <input type="number" class="shadow-none form-control my-2 form-control-sm" id="inputd" placeholder="Which column number do you want to edit?">
+         <input type="text" class="shadow-none form-control my-2 form-control-sm" id="inputc" placeholder="What do you want to replace it with?">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="editList()" >Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="container-fluid mx-auto col-lg-7 col-10 my-4 shadow-sm p-3 bg-dark " style="border-radius: 15px;">
+        <button class="w-100 btn btn-sm btn-danger mx-2 my-2" onclick="addBeginning()">Add to beginning</button>
+        <!-- <button class="btn btn-sm btn-success mx-2 my-2" onclick="firstDelete()">Delete first</button>
+        <button class="btn btn-sm btn-danger mx-2 my-2" onclick="lastDelete()">Delete last</button>
+        <button class="btn btn-sm btn-success mx-2 my-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete any</button> -->
+        <!-- <button class="btn btn-sm btn-danger mx-2 my-2" data-bs-toggle="modal" data-bs-target="#exampleModal1"  id="showInput">Edit</button> -->
+        <!-- <button class="btn btn-sm btn-success mx-2 my-2" onclick="deleteAll()">Delete all</button> -->
+    </div>
+
+    <script src="script.js"></script>
+    <script src="bootstrap-5.3.2-dist/js/bootstrap (2).js"></script>
+</body>
+</html>
+
